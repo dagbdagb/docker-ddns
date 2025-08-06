@@ -47,6 +47,32 @@ func TestBuildWebserviceResponseFromRequestToReturnValidObject(t *testing.T) {
 		t.Fatalf("Expected WebserviceResponse.AddrType to be A")
 	}
 }
+/*
+func TestBuildWebserviceResponseFromRequestToReturnValidObjectLongDom(t *testing.T) {
+	var appConfig = &Config{}
+	appConfig.SharedSecret = "changeme"
+
+	req, _ := http.NewRequest("GET", "/update?secret=changeme&domain=foo.example.org&addr=1.2.3.4", nil)
+	result := BuildWebserviceResponseFromRequest(req, appConfig, defaultExtractor)
+
+	if result.Success != true {
+		t.Fatalf("Expected WebserviceResponse.Success to be true")
+	}
+
+	if result.Domain != "foo" {
+		t.Fatalf("Expected WebserviceResponse.Domain to be foo")
+	}
+
+	if result.Address != "1.2.3.4" {
+		t.Fatalf("Expected WebserviceResponse.Address to be 1.2.3.4")
+	}
+
+	if result.AddrType != "A" {
+		t.Fatalf("Expected WebserviceResponse.AddrType to be A")
+	}
+}
+*/
+
 
 func TestBuildWebserviceResponseFromRequestWithXRealIPHeaderToReturnValidObject(t *testing.T) {
 	var appConfig = &Config{}
@@ -73,6 +99,32 @@ func TestBuildWebserviceResponseFromRequestWithXRealIPHeaderToReturnValidObject(
 	}
 }
 
+/*
+func TestBuildWebserviceResponseFromRequestWithXRealIPHeaderToReturnValidObjectLongDom(t *testing.T) {
+		var appConfig = &Config{}
+	appConfig.SharedSecret = "changeme"
+
+	req, _ := http.NewRequest("GET", "/update?secret=changeme&domain=foo.example.org", nil)
+	req.Header.Add("X-Real-Ip", "1.2.3.4")
+	result := BuildWebserviceResponseFromRequest(req, appConfig, defaultExtractor)
+
+	if result.Success != true {
+		t.Fatalf("Expected WebserviceResponse.Success to be true")
+	}
+
+	if result.Domain != "foo" {
+		t.Fatalf("Expected WebserviceResponse.Domain to be foo")
+	}
+
+	if result.Address != "1.2.3.4" {
+		t.Fatalf("Expected WebserviceResponse.Address to be 1.2.3.4")
+	}
+
+	if result.AddrType != "A" {
+		t.Fatalf("Expected WebserviceResponse.AddrType to be A")
+	}
+}
+*/
 func TestBuildWebserviceResponseFromRequestWithXForwardedForHeaderToReturnValidObject(t *testing.T) {
 	var appConfig = &Config{}
 	appConfig.SharedSecret = "changeme"
