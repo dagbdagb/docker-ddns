@@ -1,5 +1,25 @@
 # Dynamic DNS with Docker, Go and Bind9
 
+## Warning
+
+This is a clone of David Stapp's docker-ddns. It has received absolutely minimum patching to:
+- update to deb12
+- permit building the container with current tools
+- permit sending FQDN in updates from the DDNS-client
+
+Patches are nicked from https://github.com/dstapp/docker-ddns/pull/64 and https://github.com/rosauceda/docker-ddns-go/
+
+Patches are partially applied manually, and some unit test have been disabled. 
+
+I know next to nothing about containers. And even less about go. 
+
+You have been warned.
+
+Thank you to dstapp, gmkey and Golit.
+
+
+
+
 ![DockerHub build status](https://dockerbuildbadges.quelltext.eu/status.svg?organization=davd&repository=docker-ddns)
 ![Travis build status](https://travis-ci.com/dprandzioch/docker-ddns.svg?branch=master)
 
